@@ -6,7 +6,7 @@ Before graduate school, I worked as a **Fixed Income Analyst at Morgan Stanley**
 
 ## Quantitative Research Projects
 
-### [Estimating Market Impact from Position Accumulation](https://github.com/YOUR-USERNAME/crypto-market-impact)
+### [Estimating Market Impact from Position Accumulation](https://github.com/Maxpatel231/Crypto-Market-Impact)
 
 Estimated the temporary price impact of aggressive cryptocurrency trades using high-frequency SOL-USDT and ETH-USDT data across multiple exchanges.
 
@@ -23,7 +23,7 @@ Estimated the temporary price impact of aggressive cryptocurrency trades using h
 
 ---
 
-### [Levered FX Carry: Cross-Currency Bond Strategy](https://github.com/YOUR-USERNAME/levered-fx-carry)
+### [Levered FX Carry: Cross-Currency Bond Strategy](https://github.com/Maxpatel231/FX-Carry-Strategy)
 
 Developed a systematic emerging-market FX carry backtest structured as a leveraged cross-currency fixed-rate bond strategy.
 
