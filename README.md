@@ -40,7 +40,7 @@ Developed a systematic emerging-market FX carry backtest structured as a leverag
 
 ---
 
-### [Financial Ratio Quantile Strategies](https://github.com/YOUR-USERNAME/financial-ratio-quantile-strategies)
+### [Financial Ratio Quantile Strategies](https://github.comMaxpatel231/financial-ratio-quantile-strategies)
 
 Built and evaluated long-short equity strategies using accounting and valuation signals across approximately 2,865 U.S. equities from January 2018 through June 2023.
 
