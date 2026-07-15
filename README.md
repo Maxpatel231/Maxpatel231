@@ -98,4 +98,4 @@ I am recruiting for **full-time quantitative research, quantitative trading, sys
 
 ## Connect
 
-[LinkedIn](www.linkedin.com/in/max-patel-mv1) · [Email](mailto:madhavf@uchicago.edu) 
+[LinkedIn](https://www.linkedin.com/in/max-patel-mv1) · [Email](mailto:madhavf@uchicago.edu)
