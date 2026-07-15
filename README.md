@@ -80,6 +80,7 @@ Investigated whether idiosyncratic CDS spread movements carry information about 
 **Result:** after stripping systematic exposures, firm-specific CDS widening tends to precede weaker idiosyncratic equity returns, economically consistent with structural credit intuition, but the relationship is **regime-dependent**, strengthening in credit-stress periods.
 
 **Areas:** credit markets · relative value · predictive regressions · time-varying relationships
+
 **Tools:** Python · Polars · Pandas · NumPy · Numba · SciPy · statsmodels
 
 ---
@@ -100,7 +101,8 @@ Investigated whether idiosyncratic CDS spread movements carry information about 
 
 ## Research Interests
 
-I'm currently exploring **optimal execution and market-impact modeling**, **cross-asset relative value**, and **regime-dependent factor behavior**, with an emphasis on research that survives realistic frictions and out-of-sample testing rather than in-sample fit.
+The through-line across my projects is how information and liquidity move between markets: credit leading equity, trade impact propagating across venues, and carry decomposing into rates, FX, and funding. I approach these with a fixed-income desk perspective, and across the full path from finding a signal, to executing it, to building it into a systematic strategy, to decomposing where its risk actually sits. What I trust are results that survive transaction costs, crisis regimes, and out-of-sample testing.
+
 
 ---
 
