@@ -57,7 +57,7 @@ Built and evaluated long-short equity strategies using accounting and valuation 
 
 ---
 
-### [CDS–Equity Predictive Modeling](https://github.com/YOUR-USERNAME/cds-equity-predictive-model)
+### [CDS–Equity Predictive Modeling](https://github.com/Maxpatel231/cds-equity-predictive-model)
 
 Investigated whether idiosyncratic CDS spread movements contain information about subsequent equity returns.
 
