@@ -2,7 +2,7 @@
 
 **MS Financial Mathematics @ University of Chicago · ex–Morgan Stanley Fixed Income · quantitative research & systematic trading**
 
-I build research projects at the intersection of **systematic trading, market microstructure, fixed income, and portfolio risk** — pairing financial theory with careful statistical modeling and fully reproducible Python.
+I build research projects at the intersection of **systematic trading, market microstructure, fixed income, and portfolio risk**, pairing financial theory with careful statistical modeling and fully reproducible Python.
 
 Before graduate school I was a **Fixed Income Analyst at Morgan Stanley**, supporting trading across U.S. Treasuries, mortgage-backed securities, and investment-grade credit. That desk experience shapes how I approach research: I care as much about avoiding look-ahead bias, modeling transaction costs, and validating out-of-sample as I do about the headline result.
 
@@ -32,7 +32,7 @@ Estimated the temporary price impact function $I(V)$ of aggressive crypto trades
 * Measured returns on a **trade-count clock** to normalize for non-uniform activity and multi-venue clock skew
 * Validated out-of-sample with leave-one-day-out and quantile-range holdouts
 
-**Result:** the estimated exponent $\mu_2$ clusters near **0.5** across both assets and venues — Bouchaud's square-root law holds in crypto spot — and impact is **temporary**, reverting within ~50–100 subsequent trades. Exchange liquidity shifts the *level* of impact but not its functional *shape*.
+**Result:** the estimated exponent $\mu_2$ clusters near **0.5** across both assets and venues (Bouchaud's square-root law holds in crypto spot), and impact is **temporary**, reverting within ~50–100 subsequent trades. Exchange liquidity shifts the *level* of impact but not its functional *shape*.
 
 **Areas:** market microstructure · execution · nonlinear estimation · liquidity · high-frequency data
 **Tools:** Python · Polars · Pandas · NumPy · SciPy · scikit-learn · Matplotlib
@@ -62,7 +62,7 @@ Built and evaluated long-short equity strategies from accounting and valuation s
 * Formed monthly long-short decile portfolios; ran robustness across universe size, position sizing, and subperiods
 * Evaluated annualized return, Sharpe, Sortino, drawdown, and win rate, with long/short attribution
 
-**Result:** the combined multi-factor score delivered the **best risk-adjusted performance** of the signals tested, and standalone factors that were economically intuitive (e.g. low leverage) still failed in isolation — a clean illustration of why signal combination and honest out-of-sample evaluation matter.
+**Result:** the combined multi-factor score delivered the **best risk-adjusted performance** of the signals tested, and standalone factors that were economically intuitive (e.g. low leverage) still failed in isolation, a clean illustration of why signal combination and honest out-of-sample evaluation matter.
 
 **Areas:** cross-sectional equity research · factor investing · portfolio construction · backtesting
 **Tools:** Python · Pandas · NumPy · PyArrow · Nasdaq Zacks Fundamentals
@@ -77,7 +77,7 @@ Investigated whether idiosyncratic CDS spread movements carry information about 
 * Compared rolling **boxcar** and **exponentially weighted** predictive regressions
 * Assessed coefficient stability, directional accuracy, and non-normal tail behavior
 
-**Result:** after stripping systematic exposures, firm-specific CDS widening tends to precede weaker idiosyncratic equity returns — economically consistent with structural credit intuition — but the relationship is **regime-dependent**, strengthening in credit-stress periods.
+**Result:** after stripping systematic exposures, firm-specific CDS widening tends to precede weaker idiosyncratic equity returns, economically consistent with structural credit intuition, but the relationship is **regime-dependent**, strengthening in credit-stress periods.
 
 **Areas:** credit markets · relative value · predictive regressions · time-varying relationships
 **Tools:** Python · Polars · Pandas · NumPy · Numba · SciPy · statsmodels
@@ -100,7 +100,7 @@ Investigated whether idiosyncratic CDS spread movements carry information about 
 
 ## Research Interests
 
-I'm currently exploring **optimal execution and market-impact modeling**, **cross-asset relative value**, and **regime-dependent factor behavior** — with an emphasis on research that survives realistic frictions and out-of-sample testing rather than in-sample fit.
+I'm currently exploring **optimal execution and market-impact modeling**, **cross-asset relative value**, and **regime-dependent factor behavior**, with an emphasis on research that survives realistic frictions and out-of-sample testing rather than in-sample fit.
 
 ---
 
