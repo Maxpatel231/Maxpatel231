@@ -1,100 +1,108 @@
 # Hi, I'm Max
 
-I am a **Master of Science in Financial Mathematics candidate at the University of Chicago**, graduating in December 2026. My interests lie at the intersection of **quantitative research, systematic trading, market microstructure, fixed income, and portfolio risk**.
+**MS Financial Mathematics @ University of Chicago · ex–Morgan Stanley Fixed Income · quantitative research & systematic trading**
 
-Before graduate school, I worked as a **Fixed Income Analyst at Morgan Stanley**, supporting trading activity across U.S. Treasuries, mortgage-backed securities, and investment-grade corporate bonds. I am now building research projects that combine financial theory, statistical modeling, and reproducible Python implementation.
+I build research projects at the intersection of **systematic trading, market microstructure, fixed income, and portfolio risk** — pairing financial theory with careful statistical modeling and fully reproducible Python.
+
+Before graduate school I was a **Fixed Income Analyst at Morgan Stanley**, supporting trading across U.S. Treasuries, mortgage-backed securities, and investment-grade credit. That desk experience shapes how I approach research: I care as much about avoiding look-ahead bias, modeling transaction costs, and validating out-of-sample as I do about the headline result.
+
+📍 Graduating **December 2026** · recruiting for full-time **QR / QT / systematic / market-risk** roles.
+
+---
+
+## Projects at a Glance
+
+| Project | Focus | Core methods |
+|---|---|---|
+| [Market Impact from Position Accumulation](https://github.com/Maxpatel231/Crypto-Market-Impact) | Execution / microstructure | Sweep aggregation, constrained NLS, trade-clock returns, OOS cross-validation |
+| [Levered FX Carry](https://github.com/Maxpatel231/FX-Carry-Strategy) | Systematic macro / rates | Zero-curve bootstrapping, cross-currency funding, return attribution |
+| [Financial Ratio Quantile Strategies](https://github.com/Maxpatel231/Financial-Ratio-Quantile-Strategies) | Cross-sectional equity | Point-in-time factors, long-short deciles, multi-factor combination |
+| [CDS–Equity Predictive Modeling](https://github.com/Maxpatel231/cds-equity-predictive-model) | Credit relative value | Rolling regressions, residual isolation, regime analysis |
+
+---
 
 ## Quantitative Research Projects
 
 ### [Estimating Market Impact from Position Accumulation](https://github.com/Maxpatel231/Crypto-Market-Impact)
 
-Estimated the temporary price impact of aggressive cryptocurrency trades using high-frequency SOL-USDT and ETH-USDT data across multiple exchanges.
+Estimated the temporary price impact function $I(V)$ of aggressive crypto trades from high-frequency SOL-USDT and ETH-USDT data across multiple exchanges.
 
-* Processed more than 100 million nanosecond-resolution trade messages
-* Aggregated fragmented fills into economically meaningful parent sweeps
-* Estimated square-root and generalized power-law impact functions
-* Evaluated impact over multiple trade-count horizons
-* Tested model stability using temporal and trade-size holdouts
-* Compared impact magnitude and decay across exchanges
+* Processed 100M+ nanosecond-resolution trade messages; aggregated fragmented fills into economically meaningful parent sweeps (VWAP, 1ms same-side grouping)
+* Fit competing **square-root** ($r \sim \mu_0\sqrt{V}$) and **generalized power-law** ($r \sim \mu_1 V^{\mu_2}$) impact models via constrained nonlinear least squares
+* Measured returns on a **trade-count clock** to normalize for non-uniform activity and multi-venue clock skew
+* Validated out-of-sample with leave-one-day-out and quantile-range holdouts
 
-**Research areas:** market microstructure, execution, nonlinear estimation, liquidity and high-frequency data
+**Result:** the estimated exponent $\mu_2$ clusters near **0.5** across both assets and venues — Bouchaud's square-root law holds in crypto spot — and impact is **temporary**, reverting within ~50–100 subsequent trades. Exchange liquidity shifts the *level* of impact but not its functional *shape*.
 
-**Tools:** Python, Polars, Pandas, NumPy, SciPy, scikit-learn and Matplotlib
+**Areas:** market microstructure · execution · nonlinear estimation · liquidity · high-frequency data
+**Tools:** Python · Polars · Pandas · NumPy · SciPy · scikit-learn · Matplotlib
 
 ---
 
 ### [Levered FX Carry: Cross-Currency Bond Strategy](https://github.com/Maxpatel231/FX-Carry-Strategy)
 
-Developed a systematic emerging-market FX carry backtest structured as a leveraged cross-currency fixed-rate bond strategy.
+Built a systematic emerging-market FX carry backtest structured as a leveraged cross-currency fixed-rate bond strategy.
 
-* Constructed local-currency bond positions across TRY, NGN, BRL and ZAR
-* Funded positions using GBP borrowing linked to the Bank of England overnight rate
-* Bootstrapped zero curves from swap yields
-* Repriced bonds using updated market curves and accrued coupon cash flows
-* Decomposed returns into rates, FX and funding components
-* Evaluated leverage, liquidity, transaction-cost and crisis-correlation risks
+* Constructed local-currency bond positions across **TRY, NGN, BRL, and ZAR**, funded via GBP borrowing linked to the Bank of England overnight rate
+* Bootstrapped zero curves from swap yields and repriced bonds on updated curves with accrued-coupon cash flows
+* Decomposed P&L into **rates, FX, and funding** components
+* Stress-tested leverage, liquidity, transaction-cost, and crisis-correlation risk
 
-**Research areas:** FX carry, fixed income, curve construction, cross-currency funding and systematic macro
-
-**Tools:** Python, Pandas, NumPy, SciPy, Bloomberg data and public market-data sources
+**Areas:** FX carry · fixed income · curve construction · cross-currency funding · systematic macro
+**Tools:** Python · Pandas · NumPy · SciPy · Bloomberg and public market data
 
 ---
 
 ### [Financial Ratio Quantile Strategies](https://github.com/Maxpatel231/Financial-Ratio-Quantile-Strategies)
 
-Built and evaluated long-short equity strategies using accounting and valuation signals across approximately 2,865 U.S. equities from January 2018 through June 2023.
+Built and evaluated long-short equity strategies from accounting and valuation signals across **2,461 U.S. equities** (Jan 2018 – Jun 2023).
 
-* Constructed debt, return-on-investment and price-to-earnings signals
-* Formed monthly long-short quantile portfolios
-* Combined individual signals into a multi-factor score
-* Used filing dates to reduce look-ahead bias
-* Studied the effects of universe size and diversification
-* Evaluated annualized return, volatility, Sharpe ratio, drawdown and win rate
+* Constructed debt-to-market-cap, return-on-investment, and price-to-earnings signals, then combined them into a multi-factor score
+* Aligned fundamentals on **filing dates** (`merge_asof`) to eliminate look-ahead bias
+* Formed monthly long-short decile portfolios; ran robustness across universe size, position sizing, and subperiods
+* Evaluated annualized return, Sharpe, Sortino, drawdown, and win rate, with long/short attribution
 
-**Research areas:** cross-sectional equity research, factor investing, portfolio construction and backtesting
+**Result:** the combined multi-factor score delivered the **best risk-adjusted performance** of the signals tested, and standalone factors that were economically intuitive (e.g. low leverage) still failed in isolation — a clean illustration of why signal combination and honest out-of-sample evaluation matter.
 
-**Tools:** Python, Pandas, NumPy, PyArrow and Nasdaq Zacks Fundamentals
+**Areas:** cross-sectional equity research · factor investing · portfolio construction · backtesting
+**Tools:** Python · Pandas · NumPy · PyArrow · Nasdaq Zacks Fundamentals
 
 ---
 
 ### [CDS–Equity Predictive Modeling](https://github.com/Maxpatel231/cds-equity-predictive-model)
 
-Investigated whether idiosyncratic CDS spread movements contain information about subsequent equity returns.
+Investigated whether idiosyncratic CDS spread movements carry information about subsequent equity returns.
 
-* Removed broad equity-market exposure using rolling CAPM regressions
-* Hedged CDS spread returns against equity and CDS-index factors
-* Isolated idiosyncratic equity and credit residuals
-* Compared rolling boxcar and exponentially weighted predictive regressions
-* Evaluated coefficient stability, directional accuracy and tail behavior
+* Removed broad equity-market exposure via rolling CAPM regressions; hedged CDS returns against equity and CDS-index factors to isolate firm-specific residuals
+* Compared rolling **boxcar** and **exponentially weighted** predictive regressions
+* Assessed coefficient stability, directional accuracy, and non-normal tail behavior
 
-**Research areas:** credit markets, relative value, predictive regressions and time-varying relationships
+**Result:** after stripping systematic exposures, firm-specific CDS widening tends to precede weaker idiosyncratic equity returns — economically consistent with structural credit intuition — but the relationship is **regime-dependent**, strengthening in credit-stress periods.
 
-**Tools:** Python, Polars, Pandas, NumPy, Numba, SciPy and statsmodels
+**Areas:** credit markets · relative value · predictive regressions · time-varying relationships
+**Tools:** Python · Polars · Pandas · NumPy · Numba · SciPy · statsmodels
+
+---
 
 ## Technical Skills
 
-**Programming:** Python, SQL, R and introductory C++
+**Languages:** Python (primary) · SQL · R · C++ (developing)
 
-**Quantitative methods:** time-series analysis, linear regression, portfolio optimization, PCA, Monte Carlo simulation, volatility modeling, factor research and statistical backtesting
+**Quantitative methods:** time-series analysis · regression · portfolio optimization · PCA · Monte Carlo simulation · volatility modeling · factor research · statistical backtesting
 
-**Python ecosystem:** Pandas, NumPy, SciPy, Polars, statsmodels, scikit-learn, Matplotlib, Numba and Jupyter
+**Python ecosystem:** Pandas · NumPy · SciPy · Polars · statsmodels · scikit-learn · Numba · Matplotlib · Jupyter
 
-**Financial domains:** fixed income, systematic trading, market microstructure, portfolio risk, derivatives and foreign exchange
+**Financial domains:** fixed income · systematic trading · market microstructure · portfolio risk · derivatives · foreign exchange
 
-**Workflow:** Git, GitHub, VS Code, Bloomberg Terminal and reproducible research pipelines
+**Research workflow:** point-in-time data alignment · out-of-sample cross-validation · transaction-cost awareness · Git/GitHub · reproducible pipelines · Bloomberg Terminal
 
-## Current Focus
+---
 
-I am currently strengthening my foundations in:
+## Research Interests
 
-* probability and statistics;
-* linear algebra and regression;
-* stochastic processes;
-* data structures and algorithms;
-* quantitative interview problems;
-* research-quality Python implementation.
+I'm currently exploring **optimal execution and market-impact modeling**, **cross-asset relative value**, and **regime-dependent factor behavior** — with an emphasis on research that survives realistic frictions and out-of-sample testing rather than in-sample fit.
 
-I am recruiting for **full-time quantitative research, quantitative trading, systematic strategy and market-risk roles beginning around December 2026**.
+---
 
 ## Connect
 
